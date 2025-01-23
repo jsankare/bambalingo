@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { Navigation } from './components/Navigation'
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
+import { LexiconPage } from "./pages/lexicon";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -24,6 +25,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/dictionnary" element={<LexiconPage />} />
             </Routes>
         </BrowserRouter>
     )

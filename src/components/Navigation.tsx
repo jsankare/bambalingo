@@ -36,8 +36,9 @@ export function Navigation() {
     return (
         <Nav>
             <NavList>
-                <li><StyledNavLink to="/">Home</StyledNavLink></li>
-                <li><StyledNavLink to="/about">About</StyledNavLink></li>
+                <li><StyledNavLink to="/">Accueil</StyledNavLink></li>
+                <li><StyledNavLink to="/lexicon">Lexique</StyledNavLink></li>
+                <li><StyledNavLink to="/about">A propos</StyledNavLink></li>
             </NavList>
         </Nav>
     );

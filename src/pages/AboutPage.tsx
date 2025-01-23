@@ -22,9 +22,9 @@ const Content = styled.div`
 export function AboutPage() {
     return (
         <Container>
-            <Title>About Us</Title>
+            <Title>A propos du projet</Title>
             <Content>
-                <p>This is me templating the website.</p>
+                <p>Ce site sert à référencer les entrées et s'entrainer à parler le Bambara, en suivant les enseignements du livre <a href="/">le Bambara pour les nuls</a></p>
             </Content>
         </Container>
     );
