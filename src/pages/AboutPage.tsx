@@ -1,14 +1,10 @@
 import styled from 'styled-components';
+import {BambaTitle} from "../components/ui/Title.tsx";
 
 const Container = styled.div`
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
-`;
-
-const Title = styled.h1`
-    color: #333;
-    text-align: center;
 `;
 
 const Content = styled.div`
@@ -22,7 +18,7 @@ const Content = styled.div`
 export function AboutPage() {
     return (
         <Container>
-            <Title>A propos du projet</Title>
+            <BambaTitle title="A propos"/>
             <Content>
                 <p>Ce site sert à référencer les entrées et s'entrainer à parler le Bambara, en suivant les enseignements du livre <a href="/">le Bambara pour les nuls</a></p>
             </Content>

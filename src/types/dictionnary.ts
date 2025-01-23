@@ -1,4 +1,3 @@
-// Button Types
 export interface expression {
     id: number;
     french: string;
