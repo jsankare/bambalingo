@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BambaButton } from "../components/buttons/Button.tsx";
+import { BambaButton } from "../components/buttons/Button";
 
 const Container = styled.div`
     padding: 2rem;
@@ -26,7 +26,7 @@ export function HomePage() {
             <Title>Welcome Home</Title>
             <Content>
                 <p>This is the home page of our application. Feel free to explore!</p>
-                <BambaButton link="/about" text="About Us"></BambaButton>
+                <BambaButton link="/about" text="About Us" />
             </Content>
         </Container>
     );

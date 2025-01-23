@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import React from 'react';
-
-interface ButtonProps {
-    link: string;
-    text: string;
-}
+import { ButtonProps } from '../../types';
 
 const Wrapper = styled.div`
     padding: 1rem;
@@ -25,21 +20,19 @@ const StyledNavLink = styled(NavLink)`
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
-        &.active {
-            color: #646cff;
-            font-weight: bold;
-        }
-        &:hover {
-            color: #535bf2;
-        }
+    &.active {
+        color: #646cff;
+        font-weight: bold;
+    }
+    &:hover {
+        color: white;
+    }
 `;
 
-export function BambaButton(link: string, text: string) {
+export function BambaButton({ link, text }: ButtonProps) {
     return (
-        <>
-            <Wrapper>
-                <StyledNavLink to={link}>{text}</StyledNavLink>
-            </Wrapper>
-        </>
+        <Wrapper>
+            <StyledNavLink to={link}>{text}</StyledNavLink>
+        </Wrapper>
     );
 }
