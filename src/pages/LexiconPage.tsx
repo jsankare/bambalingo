@@ -3,32 +3,8 @@ import styled from "styled-components";
 import { DictionaryCard } from "../components/dictionnary/Card";
 import { PronunciationGuide } from "../components/dictionnary/PronunciationGuide";
 import { BambaTitle } from "../components/ui/Title";
-
-const words = [
-    { id: 1, bambara: "Tiaman", french: "Jamais" },
-    { id: 2, bambara: "Sini", french: "Demain" },
-    { id: 3, bambara: "Kunù", french: "Hier" },
-    { id: 4, bambara: "Bi", french: "Aujourd'hui" },
-    { id: 5, bambara: "Dɔgɔ", french: "Petit" },
-    { id: 6, bambara: "Ba", french: "Grand" },
-    { id: 7, bambara: "Ji", french: "Eau" },
-    { id: 8, bambara: "Dumuni", french: "Nourriture" },
-    { id: 9, bambara: "Mɔgɔ", french: "Personne" },
-    { id: 10, bambara: "So", french: "Maison" }
-];
-
-const expressions = [
-    { id: 1, bambara: "I ni sogoma", french: "Bonjour (matin)" },
-    { id: 2, bambara: "Na n fo", french: "Viens me saluer" },
-    { id: 3, bambara: "I ba ka kéné", french: "Comment se porte ta mère ?" },
-    { id: 4, bambara: "K'i ni su", french: "Bonsoir" },
-    { id: 5, bambara: "I ni ce", french: "Merci" },
-    { id: 6, bambara: "Ka sɔrɔ ka taa", french: "Au revoir" },
-    { id: 7, bambara: "I dankɛra", french: "S'il te plaît" },
-    { id: 8, bambara: "N tɛ a fɛ", french: "Je ne veux pas" },
-    { id: 9, bambara: "N bɛ taa", french: "Je m'en vais" },
-    { id: 10, bambara: "I ka kɛnɛ?", french: "Comment vas-tu ?" }
-];
+import { words } from "../data/words";
+import { expressions } from "../data/expressions";
 
 const Wrapper = styled.section`
     padding: 2rem;
