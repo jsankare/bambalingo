@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { pronunciationRules } from "../../data/lexicon";
 
 const Container = styled.div`
     max-width: 800px;
@@ -27,52 +28,43 @@ const Example = styled.div`
     margin: 0.5rem 0;
 `;
 
-const Letter = styled.span`
+const Rule = styled.span`
     font-weight: bold;
     color: #646cff;
 `;
 
-const pronunciationGuideData = [
-    {
-        letter: "ɛ",
-        pronunciation: "le 'è' en français",
-        example: "dɛmɛ",
-        translation: "aide",
-        pronunciationExample: "dèmè"
-    },
-    {
-        letter: "ɔ",
-        pronunciation: "le 'o' ouvert en français",
-        example: "kɔnɔ",
-        translation: "oiseau",
-        pronunciationExample: "kono"
-    },
-    {
-        letter: "ŋ",
-        pronunciation: "le 'ng' en anglais",
-        example: "ŋɔmi",
-        translation: "miel",
-        pronunciationExample: "ngomi"
-    }
-];
+const Note = styled.p`
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+`;
 
 export function PronunciationGuide() {
     return (
         <Container>
             <Section>
                 <Title>Guide de prononciation du Bambara</Title>
-                <p>Le bambara utilise l'alphabet latin avec quelques caractères spéciaux. Voici quelques exemples :</p>
+                <p>Le bambara utilise l'alphabet latin avec des caractères spéciaux. Voici un guide complet :</p>
             </Section>
 
-            <Section>
-                <Title>Lettres spéciales</Title>
-                {pronunciationGuideData.map((data, index) => (
-                    <Example key={index}>
-                        <p><Letter>{data.letter}</Letter> - se prononce comme {data.pronunciation}</p>
-                        <p>Exemple: <i>{data.example}</i> ({data.translation}) - prononcé "{data.pronunciationExample}"</p>
-                    </Example>
-                ))}
-            </Section>
+            {pronunciationRules.map((section, index) => (
+                <Section key={index}>
+                    <Title>{section.title}</Title>
+                    <p>{section.description}</p>
+
+                    {section.cases.map((item, caseIndex) => (
+                        <Example key={caseIndex}>
+                            <p><Rule>{item.rule}</Rule> - {item.pronunciation}</p>
+                            <p>Exemple: <i>{item.example}</i> ({item.translation})
+                                {item.simplifiedPhonetic && ` - prononcé "${item.simplifiedPhonetic}"`}</p>
+                            {item.note && <Note>{item.note}</Note>}
+                        </Example>
+                    ))}
+
+                    {section.note && <Note>{section.note}</Note>}
+                </Section>
+            ))}
         </Container>
     );
 }
